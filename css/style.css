@@ -210,7 +210,12 @@ h4 {
 
 .people {
   text-align: center;
-  margin-bottom: 94px;
+  padding-bottom: 94px;
+  background-color: #f5f4fa;
+}
+
+.team {
+  padding-top: 94px;
 }
 
 .people > li:hover {
@@ -270,6 +275,7 @@ h4 {
 }
 
 .address {
+  max-width: 230px;
   margin-top: 20px;
 }
 
@@ -284,24 +290,18 @@ h4 {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
-}
-
-.address > a {
-  display: grid;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.03em;
+  display: block;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 9px;
 }
 
-.address > a:hover {
-  color: #2196f3;
+.link {
 }
 
-.address > a:first-child {
+.white {
   color: white;
+}
+
+.link:hover {
+  color: #2196f3;
 }
