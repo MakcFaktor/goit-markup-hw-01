@@ -100,7 +100,7 @@ body {
   position: relative;
 }
 
-.z_in {
+.title__wrapper {
   position: relative;
   z-index: 2;
 }
@@ -111,12 +111,12 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: black;
-  opacity: 0.1;
+  background: #2f303a;
+  opacity: 0.5;
   z-index: 1;
 }
 
-.main__text {
+.title__wrapper_text {
   font-weight: 900;
   font-size: 44px;
   line-height: 60px;
@@ -126,7 +126,7 @@ body {
   color: #ffffff;
 }
 
-.btn {
+.title__wrapper_btn {
   display: inline-block;
   margin-top: 30px;
   padding: 10px 32px;
@@ -139,7 +139,7 @@ body {
   border: none;
 }
 
-.btn:hover {
+.title__wrapper_btn:hover {
   animation: pulsate 1s ease-in-out;
 }
 
@@ -149,7 +149,7 @@ body {
   }
 }
 
-.btn:active {
+.title__wrapper_btn:active {
   color: red;
 }
 
