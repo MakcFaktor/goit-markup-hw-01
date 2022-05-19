@@ -51,6 +51,7 @@ body {
 .nav__item_list:hover {
   background-size: 100% 2px;
 }
+
 .nav__item {
   display: flex;
 }
@@ -67,9 +68,11 @@ body {
 .header__block {
   display: flex;
 }
+
 .margin-right {
   margin-right: 30px;
 }
+
 .header__block-link {
   display: flex;
 }
@@ -83,9 +86,13 @@ body {
   padding-left: 10px;
 }
 
+/* Почему не работает вместе хавер */
+
+.header__block-link:hover,
 .header__block-text:hover {
   color: #2196f3;
 }
+
 .header__block-link:hover path {
   fill: #2196f3;
 }
@@ -212,14 +219,41 @@ body {
 }
 
 .images__cards-link {
+  position: relative;
   transition: 1s;
   display: block;
   width: 370px;
   height: 294px;
 }
 
-.images__cards-link:hover {
-  transform: scale(1.1);
+.images__cards-link:hover .images__cards-block {
+  visibility: visible;
+  opacity: 1;
+}
+
+.images__cards-block {
+  position: absolute;
+  width: 100%;
+  padding: 27px 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+
+.images__cards-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 /* People */
@@ -229,6 +263,7 @@ body {
   padding: 94px 0;
   background-color: #f5f4fa;
 }
+
 .cards__wrapper-item {
   display: flex;
   justify-content: space-between;
@@ -241,6 +276,7 @@ body {
   transition: 0.3s;
   border-radius: 0px 0px 4px 4px;
 }
+
 .cards__wrapper-item-link:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -286,12 +322,15 @@ body {
   border-radius: 50%;
   transition: all 0.5s ease;
 }
+
 .social_link:hover {
   background: #2196f3;
 }
+
 .social_link path {
   transition: all 0.5s ease;
 }
+
 .social_link:hover path {
   fill: #fff;
 }
@@ -365,6 +404,7 @@ body {
 .studio {
   color: white;
 }
+
 .footer__link {
   display: inline-block;
 }
@@ -372,6 +412,7 @@ body {
 .disp {
   display: block;
 }
+
 .addr {
   padding-bottom: 9px;
 }
@@ -395,7 +436,45 @@ body {
   color: #2196f3;
 }
 
+.footer__box {
+  display: flex;
+}
+
+.footer__social-text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.footer__social-icon {
+  display: flex;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-left: 70px;
+}
+
+.grey {
+  background: rgba(255, 255, 255, 0.1);
+  margin-right: 10px;
+}
+
+.grey:last-child {
+  margin-right: 0;
+}
+
 /* Portfolio */
+
+/* Group button */
 
 .group__btn {
   display: flex;
@@ -441,6 +520,8 @@ body {
   color: red;
 }
 
+/* Cards */
+
 .cards__img {
   display: flex;
   justify-content: space-between;
@@ -455,14 +536,42 @@ body {
   /* Вопрос почему не работает ? */
   flex-basis: calc(33.333% - 30px);
   margin-bottom: 30px;
+  position: relative;
 }
 .cards__img_item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.cards__img-text {
+  padding: 63px 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.cards__img_block {
+  position: absolute;
+  width: 100%;
+  height: 294px;
+  background: rgba(33, 150, 243, 0.9);
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease 0s;
+}
+
+.cards__img_item:hover .cards__img_block {
+  visibility: visible;
+  opacity: 1;
+}
+
 .cards__img_info {
   padding: 20px 24px;
 }
+
 .cards__img_info-a,
 .cards__img_info-b {
   display: block;
@@ -482,4 +591,34 @@ body {
   line-height: 30px;
   letter-spacing: 0.03em;
   color: #757575;
+}
+
+/* Modal */
+
+.demo {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 4;
+  top: 0;
+}
+
+.demo__mid {
+  margin: 100px auto;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 528px;
+  height: 581px;
+}
+
+.demo__close-img {
+  margin-top: 8px;
+  margin-left: 490px;
+}
+
+.close_none {
+  display: block;
 }
